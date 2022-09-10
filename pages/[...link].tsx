@@ -1,4 +1,3 @@
-import { readFile } from 'fs/promises'
 import type { GetServerSidePropsContext } from 'next'
 import links from '../links.json'
 
