@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "cookie": "^0.5.0",
     "next": "12.3.0",
+    "posthog-node": "^2.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@types/cookie": "^0.5.1",
     "@types/node": "18.7.16",
     "@types/react": "18.0.19",
     "@types/react-dom": "18.0.6",
