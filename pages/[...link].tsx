@@ -1,5 +1,6 @@
 import { readFile } from 'fs/promises'
 import type { GetServerSidePropsContext } from 'next'
+import links from '../links.json'
 
 export default function Link({ link }: { link: string }) {
   return <p>{link}</p>
@@ -7,13 +8,11 @@ export default function Link({ link }: { link: string }) {
 
 
 export const getServerSideProps = async ({params}: GetServerSidePropsContext) => {
-    const links = await readFile("links.json", "utf-8")
-    const jsonLinks = JSON.parse(links)
-
+    
     if (params?.link) {
         return {
             redirect: {
-                destination: jsonLinks[params.link as string],
+                destination: (links as Record<string, string>)[params.link as string],
                 permanent: false
             }
         }
